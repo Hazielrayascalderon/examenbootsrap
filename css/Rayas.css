@@ -3,47 +3,73 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
+/* Banner principal */
 .header-banner {
-    background-color: #851e25;
-    padding: 4rem 0;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    padding: 5rem 0;
+    width: 100%;
     text-align: center;
-    margin-bottom: 2rem;
 }
 
 .header-banner h1 {
     font-weight: 700;
-    margin-bottom: 1rem;
-    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .header-banner h2 {
-    font-weight: 400;
-    color: white;
-    opacity: 0.9;
+    font-weight: 300;
+    font-size: 2rem;
 }
 
-.container.my-5 {
+/* Contenedor principal */
+.full-width-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Sección de introducción (ancho completo) */
+.full-width-intro {
+    width: 100%;
+    padding: 3rem 0;
+    background-color: #fff;
     margin-bottom: 3rem;
-    margin-top: 3rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.container.my-5 p,
-.card-text {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.formation-section {
-    padding: 0;
-    background-color: transparent;
-}
-
-.skill-title {
-    color: #1c997f;
-    font-size: 1.8rem;
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
     margin-bottom: 1.5rem;
+    padding: 0 15%;
+}
+
+/* Sección "Cómo ser Data Scientist" (ancho completo) */
+.full-width-formation {
+    width: 100%;
+    padding: 4rem 0;
+    background-color: #f0f4f8;
+    margin: 3rem 0;
+}
+
+.formation-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0 15%;
+}
+
+/* Estilos comunes para secciones */
+.skill-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4ca1af;
+    padding-bottom: 0.5rem;
 }
 
 .skill-list {
@@ -52,83 +78,86 @@ body {
 }
 
 .skill-list li {
+    padding: 0.5rem 0;
     position: relative;
-    padding-left: 1.8rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
+    padding-left: 1.5rem;
 }
 
 .skill-list li:before {
-    content: "•";
-    color: #1c997f;
-    font-size: 1.5rem;
+    content: "▹";
     position: absolute;
     left: 0;
-    top: -0.3rem;
+    color: #4ca1af;
 }
 
 .section-title {
-    color: #1c997f;
-    font-size: 1.8rem;
+    color: #2c3e50;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #4ca1af;
+    display: inline-block;
+    padding: 0 2rem 0.5rem;
 }
 
+/* Tarjetas informativas */
 .info-card {
-    background-color: #f0ddbd;
+    border: none;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
+    background: white;
 }
 
-.info-card .card-img-top {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.info-card .card-body {
-    padding: 1.5rem;
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .info-card .card-title {
-    color: #1c997f;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
-.img-fluid.rounded {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    object-position: center;
+.info-card .card-text {
+    color: #555;
+}
+
+.img-fluid {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .intro-text,
+    .formation-text {
+        padding: 0 10%;
+    }
 }
 
 @media (max-width: 768px) {
-    .header-banner {
-        padding: 2.5rem 0;
-    }
-    
     .header-banner h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     
     .header-banner h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+    }
+    
+    .intro-text,
+    .formation-text {
+        padding: 0 5%;
     }
     
     .section-title {
         font-size: 1.5rem;
-    }
-    
-    .info-card {
-        margin-bottom: 2rem;
-    }
-    
-    .img-fluid.rounded,
-    .info-card .card-img-top {
-        height: 200px;
     }
 }
